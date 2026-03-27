@@ -20,7 +20,7 @@ async function main() {
 
   // In production, serve the built frontend
   if (process.env.NODE_ENV === "production") {
-    const publicDir = path.resolve(__dirname, "../public");
+    const publicDir = path.resolve(__dirname, "../dist/public");
     app.use(express.static(publicDir));
     app.get("*", (_req, res) => {
       res.sendFile(path.join(publicDir, "index.html"));

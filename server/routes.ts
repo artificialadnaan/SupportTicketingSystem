@@ -99,7 +99,10 @@ export function registerRoutes(app: Router) {
   // Look up ticket by number (public)
   app.get("/api/tickets/lookup/:ticketNumber", async (req: Request, res: Response) => {
     try {
-      const ticket = await storage.getTicketByNumber(req.params.ticketNumber);
+      const ticketNumber = Array.isArray(req.params.ticketNumber)
+        ? req.params.ticketNumber[0]
+        : req.params.ticketNumber;
+      const ticket = await storage.getTicketByNumber(ticketNumber);
       if (!ticket) {
         res.status(404).json({ error: "Ticket not found" });
         return;
