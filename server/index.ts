@@ -22,7 +22,7 @@ async function main() {
   if (process.env.NODE_ENV === "production") {
     const publicDir = path.resolve(__dirname, "../dist/public");
     app.use(express.static(publicDir));
-    app.get("*", (_req, res) => {
+    app.get("{*path}", (_req, res) => {
       res.sendFile(path.join(publicDir, "index.html"));
     });
   }
