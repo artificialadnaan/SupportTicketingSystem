@@ -70,7 +70,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t bg-white mt-12">
         <div className="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-          T Rock Construction &middot; Support Hub powered by BlueprintOps
+          T Rock Construction &middot; Support Hub powered by Build Kit Labs
         </div>
       </footer>
     </div>

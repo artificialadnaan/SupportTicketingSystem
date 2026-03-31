@@ -49,7 +49,7 @@ function baseTemplate(title: string, body: string): string {
         <tr>
           <td style="background:#f4f4f5;padding:16px 32px;text-align:center;">
             <p style="margin:0;color:#71717a;font-size:12px;">
-              T Rock Construction &middot; Powered by BlueprintOps
+              T Rock Construction &middot; Powered by Build Kit Labs
             </p>
           </td>
         </tr>
@@ -113,7 +113,7 @@ export async function sendTicketConfirmation(
 
   try {
     await transport.sendMail({
-      from: process.env.SMTP_FROM || "T Rock Support <support@blueprintops.dev>",
+      from: process.env.SMTP_FROM || "T Rock Support <support@buildkitlabs.dev>",
       to,
       subject: `[${ticketNumber}] ${typeLabel} Received — ${title}`,
       html: baseTemplate("Ticket Submitted", body),
@@ -186,7 +186,7 @@ export async function sendStatusUpdate(
 
   try {
     await transport.sendMail({
-      from: process.env.SMTP_FROM || "T Rock Support <support@blueprintops.dev>",
+      from: process.env.SMTP_FROM || "T Rock Support <support@buildkitlabs.dev>",
       to,
       subject: `[${ticketNumber}] ${subjectPrefix} — ${title}`,
       html: baseTemplate("Ticket Updated", body),
